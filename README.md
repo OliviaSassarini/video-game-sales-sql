@@ -85,12 +85,12 @@ You can also open `video_games.db` in a free tool such as [DB Browser for SQLite
 
 ```
 video-game-sales-sql/
-├── data/                  # put vgsales.csv here
-├── outputs/               # query results (CSV), created when you run the project
+├── data/                  # vgsales.csv here
+├── outputs/               # results (CSV)
 ├── sql/
 │   ├── 01_schema.sql          # creates the tables
 │   ├── 02_clean_and_load.sql  # cleans the raw data and loads the tables
-│   └── 03_analysis.sql        # the 10 business questions
+│   └── 03_analysis.sql        # 10 business questions
 ├── run_project.py         # builds the database and runs everything
 └── README.md
 ```
