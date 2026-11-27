@@ -6,6 +6,13 @@ An end-to-end SQL project analysing over 16,000 video games released between 198
 
 **Tools:** SQL (SQLite), Python (standard library only, to load the data and run the queries).
 
+## Summary
+
+- **Action** is the best-selling genre overall (19.6% of sales), but **Platform** games sell the most per game.
+- **Japan is different:** Role-Playing makes up 27% of Japanese sales vs 7.5% in the West, and Shooters barely sell there.
+- **Sony and Nintendo are almost tied** (~3,500m units each), well ahead of Microsoft.
+- **Hits drive the market:** just 12.6% of games sold 1m+ copies, but they make up 64% of all sales.
+- **Sales peaked in 2008**, and Nintendo is the most reliable publisher, with nearly half its games selling over 1 million.
 ---
 
 ## The questions
@@ -47,10 +54,10 @@ sales     (game_id, na_sales, eu_sales, jp_sales, other_sales, global_sales)
 
 Done in SQL in [`sql/02_clean_and_load.sql`](sql/02_clean_and_load.sql):
 
-- **Missing years:** stored as the text `N/A`, converted to `NULL` so they don't break year-based analysis.
-- **Missing publishers:** `N/A` or blank, converted to `NULL`.
+- **Missing years:** 270 games stored as the text `N/A`, converted to `NULL` so they don't break year-based analysis.
+- **Missing publishers:** 58 games `N/A` or blank, converted to `NULL`.
 - **Extra spaces:** trimmed from all text fields.
-- **Duplicate rows:** removed with `SELECT DISTINCT`.
+- **Duplicate rows:** 1 exact duplicate removed with SELECT DISTINCT, leaving 16,597 games.
 - **Text to numbers:** years and sales cast from text to numeric types.
 - **New field:** each platform mapped to its manufacturer with `CASE`.
 
@@ -58,19 +65,19 @@ Done in SQL in [`sql/02_clean_and_load.sql`](sql/02_clean_and_load.sql):
 
 ## Key findings
 
-<!-- After running the project, fill these in from the files in outputs/ -->
 
-- **Top genre:** …
-- **Regional differences:** …
-- **Console makers:** …
-- **Blockbusters vs long tail:** …
-- **Peak year:** …
+
+- Action is the biggest genre: 1,751m units, 19.6% of all sales. But Platform games sell the most per game (0.94m on average, vs 0.53m for Action).
+- Japan plays differently: Role-Playing is Japan's #1 genre and makes up 27.3% of Japanese sales vs only 7.5% in North America and Europe. Shooters show the opposite: 13.1% of Western sales but just 3.0% in Japan.
+- Sony and Nintendo are neck and neck: Sony platforms sold 3,580m units and Nintendo 3,522m, more than double Microsoft (1,379m).
+- Sales peaked in 2008: 679m units from 1,428 games. The drop after that is partly real and partly because recent years are incomplete in the data (see limitations).
+- Best-selling game: Wii Sports (82.7m units), which came bundled with the Wii console.
 
 ---
 
 ## How to run it
 
-1. **Download the data.** Get `vgsales.csv` from the [Video Game Sales dataset on Kaggle](https://www.kaggle.com/datasets/gregorut/videogamesales) (free account needed) and put it in the `data/` folder.
+1. **Download the data.** Get `vgsales.csv` from the [Video Game Sales dataset on Kaggle](https://www.kaggle.com/datasets/gregorut/videogamesales).
 2. **Run the project** (Python 3, no installs needed):
    ```
    python run_project.py
@@ -99,6 +106,4 @@ video-game-sales-sql/
 
 ## Data source and limitations
 
-Data from the Video Game Sales dataset on Kaggle, originally scraped from VGChartz. It only includes games that sold over 100,000 copies, and figures for the most recent years are incomplete, so recent years look lower than they really were. Sales are mostly physical retail units, so digital downloads are largely missing.
-
-**Author:** Olivia Sassarini · [LinkedIn](http://www.linkedin.com/in/olivia-s-66a222395) · [GitHub](https://github.com/oliviasassarini)
+Data from the Video Game Sales dataset on Kaggle, originally scraped from VGChartz. Figures for the most recent years are incomplete (2016 is partial, and 2017 and 2020 have only a handful of games), so recent years look lower than they really were. Sales are mostly physical retail units, so digital downloads are largely missing.
