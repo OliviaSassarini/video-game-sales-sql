@@ -1,0 +1,10 @@
+region,rank_in_region,genre_name,sales_m
+Europe,1,Action,525.0
+Europe,2,Sports,376.9
+Europe,3,Shooter,313.3
+Japan,1,Role-Playing,352.3
+Japan,2,Action,159.9
+Japan,3,Sports,135.4
+North America,1,Action,877.8
+North America,2,Sports,683.4
+North America,3,Shooter,582.6

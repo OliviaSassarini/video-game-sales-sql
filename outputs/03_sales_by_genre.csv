@@ -1,0 +1,13 @@
+genre_name,games,global_sales_m,avg_sales_per_game_m,pct_of_all_sales
+Action,3316,1751.2,0.53,19.6
+Sports,2346,1330.9,0.57,14.9
+Shooter,1309,1037.3,0.79,11.6
+Role-Playing,1488,927.4,0.62,10.4
+Platform,886,831.4,0.94,9.3
+Misc,1739,810.0,0.47,9.1
+Racing,1249,732.0,0.59,8.2
+Fighting,848,448.9,0.53,5.0
+Simulation,867,392.2,0.45,4.4
+Puzzle,582,244.9,0.42,2.7
+Adventure,1286,239.0,0.19,2.7
+Strategy,681,175.1,0.26,2.0

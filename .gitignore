@@ -1,0 +1,10 @@
+# The database is rebuilt by run_project.py
+*.db
+
+# Python
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
